@@ -9,7 +9,7 @@ pipeline {
     
     environment {
         TOMCAT_HOME = '/opt/tomcat'
-        WAR_FILE = 'Backend/Ehealth-B/target/Ehealth-B-0.0.1-SNAPSHOT.war'
+        WAR_FILE = 'Ehealth-B-0.0.1-SNAPSHOT.war'
         TOMCAT_WEBAPPS = "${TOMCAT_HOME}/webapps"
         APP_CONTEXT = 'ehealth.war'
         TOMCAT_PORT = '8086'
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Clonage du repository...'
                 checkout scmGit(
-                    branches: [[name: '*/ciPipeline']],
+                    branches: [[name: '*/main']],
                     extensions: [],
                     userRemoteConfigs: [[
                         credentialsId: '72145410-c633-4919-8bdd-f5ad0b33e759',
